@@ -1,0 +1,128 @@
+/* Modify Bootstrap things */
+
+.glyphicon {
+    margin-right: 3px;
+}
+
+.container {
+	margin-top: 80px;
+}
+
+.row {
+	border: 5px groove;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+.container-fluid {
+    background: rgba(255,255,255,0);
+}
+
+.panel-heading {
+    cursor: pointer;
+}
+
+/* Personal Styles */
+
+.icon-margin {
+    margin-right: 10px;
+}
+
+body {
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+    font-family: "Tahoma", Geneva, sans-serif;
+}
+
+/** Page Navbar **/
+
+/* Tier 1 Navbar */
+.navbar-default {
+    background: #FFEFCC;
+}
+
+.navbar-default .navbar-nav > .active,
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #000;
+    background: none;
+}
+
+.navbar-default .navbar-nav > .dropdown > a {
+    background: none;
+}
+
+.navbar-default .navbar-nav > .dropdown > a:hover,
+.navbar-default .navbar-nav > .dropdown > a:focus {
+    color: #000;
+    background: none;
+}
+
+/* Tier 2 Navbar */
+.navbar-default .navbar-nav > .dropdown > .dropdown-menu,
+.navbar-default .navbar-nav > .dropdown > .dropdown-menu > li > a {
+    border-top: none;
+    width: 100%;
+    background: #FFEFCC;
+}
+
+.navbar-default .navbar-nav > .dropdown > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > .dropdown > .dropdown-menu > li > a:focus {
+    color: #000;
+}
+
+/** Images **/
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.brand {
+    width: 150px;
+    height: 15px;
+}
+
+.full {
+    margin-top: 50px;
+}
+
+.button {
+    width: 200px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    clear: right;
+}
+
+/** Headings **/
+
+h1.title {
+    margin-bottom: 20px;
+}
+
+h2.date {
+    margin-top: 0;
+}
+
+p.text {
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+.center {
+    text-align: center;
+}
+
+/** Font-Faces **/
+
+@font-face {
+  font-family: 'Cinnamon';
+
+  src: url('/assets/fonts/cinnamoncake.eot');
+  src: url('/assets/fonts/cinnamoncake.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/cinnamoncake.woff2') format('woff2'), url('/assets/fonts/cinnamoncake.woff') format('woff'), url('/assets/fonts/cinnamoncake.ttf') format('truetype'), url('/assets/fonts/cinnamoncake.svg#glyphicons_halflingsregular') format('svg');
+}
