@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+section.success a, section.success a:hover, section.success a:focus, section.success a:active, section.success a.active {
+	color: #BBB;
+}
+
 header {
 	background-image: url('../img/meteor_shower.jpg');
 	background-size: cover;
