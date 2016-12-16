@@ -1,25 +1,21 @@
-@import './base';
+@import 'base/base';
 
 body {
-
+  position: relative;
 }
 
 .page-container {
   background: green;
   padding: 0;
+  position: relative;
 
-  // Wildcard column selector
-  div[class*="col-"] {
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  // Sections
   .sidebar {
     background: red;
-    width: inherit;
-    position: fixed;
+    position: relative;
+    z-index: 2;
     text-align: right;
+    width: 200px;
+    // margin-left: calc(100% - 200px);
 
     .sidebar-list {
       padding: 0;
@@ -36,37 +32,42 @@ body {
     }
   }
 
-  .contact-section, 
-  .biography-section,
-  .experience-section,
-  .photoframe-section,
-  .portfolio-section,
-  .trackrecord-section {
-    height: 500px;
-    background: yellow;
-  }
+  .page-content {
+    position: relative;
+    z-index: 1;
 
-  .biography-section {
-    
-  }
+    .contact-section, 
+    .biography-section,
+    .experience-section,
+    .photoframe-section,
+    .portfolio-section,
+    .trackrecord-section {
+      height: 500px;
+      background: yellow;
+    }
 
-  .contact-section {
+    .biography-section {
+      
+    }
 
-  }
+    .contact-section {
 
-  .experience-section {
+    }
 
-  }
+    .experience-section {
 
-  .photoframe-section {
+    }
 
-  }
+    .photoframe-section {
 
-  .portfolio-section {
+    }
 
-  }
+    .portfolio-section {
 
-  .trackrecord-section {
+    }
 
+    .trackrecord-section {
+
+    }
   }
 }

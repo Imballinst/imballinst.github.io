@@ -471,17 +471,19 @@
   .col-xs-expand-top {
     margin-top: 10px; } }
 
+body {
+  position: relative; }
+
 .page-container {
   background: green;
-  padding: 0; }
-  .page-container div[class*="col-"] {
-    padding-right: 0;
-    padding-left: 0; }
+  padding: 0;
+  position: relative; }
   .page-container .sidebar {
     background: red;
-    width: inherit;
-    position: fixed;
-    text-align: right; }
+    position: relative;
+    z-index: 2;
+    text-align: right;
+    width: 200px; }
     .page-container .sidebar .sidebar-list {
       padding: 0;
       list-style: none;
@@ -492,11 +494,14 @@
       @media (min-width: 992px) {
         .page-container .sidebar .sidebar-list {
           padding-right: 13px; } }
-  .page-container .contact-section,
-  .page-container .biography-section,
-  .page-container .experience-section,
-  .page-container .photoframe-section,
-  .page-container .portfolio-section,
-  .page-container .trackrecord-section {
-    height: 500px;
-    background: yellow; }
+  .page-container .page-content {
+    position: relative;
+    z-index: 1; }
+    .page-container .page-content .contact-section,
+    .page-container .page-content .biography-section,
+    .page-container .page-content .experience-section,
+    .page-container .page-content .photoframe-section,
+    .page-container .page-content .portfolio-section,
+    .page-container .page-content .trackrecord-section {
+      height: 500px;
+      background: yellow; }

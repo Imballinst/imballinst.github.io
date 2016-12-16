@@ -30,7 +30,7 @@ const basePaths = {
 
 const paths = {
   src: {
-    scss: basePaths.dev + 'scss/**/*.scss',
+    scss: basePaths.dev + 'scss/*.scss',
     css: basePaths.dev + 'css/**/*.css',
     js: {
       root: basePaths.dev + 'js/*.js',
@@ -98,7 +98,7 @@ function bundle(pkg) {
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source(bundleName +'.js'))
     .pipe(gulp.dest(paths.dev.js.root))
-    .pipe(browserSync.stream({once: true}));
+    .pipe(browserSync.stream());
 }
 
 gulp.task('reactIndex', bundle.bind(null, b('index')));
@@ -131,7 +131,7 @@ gulp.task('browserSync', function() {
 // Watch Files For Changes
 gulp.task('watch', ['sass', 'reactWatch'], function() {
   // Any SASS changes
-  gulp.watch(paths.src.scss, ['sass', browserSync.reload]);
+  gulp.watch(paths.src.scss, ['sass']);
   gulp.watch(paths.src.html, [browserSync.reload]);
   // Any react changes
   watchIndex.on('log', gutil.log);
