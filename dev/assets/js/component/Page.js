@@ -4,17 +4,29 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import PageContent from './PageContent';
 import Sidebar from './Sidebar';
 
-const Page = () => (  
-  <Grid className="page-container" fluid>
-    <div className="page-content">
-      <PageContent />
-    </div>
-    <div className="sidebar">
-      <Sidebar />
-    </div>
-  </Grid>
-);
+class Page extends React.Component {
+  render() {
+    return (
+      <Grid className="page-container" fluid>
+        <div className="page-content">
+          <PageContent 
+            changeSection={this.props.changeSection}
+          />
+        </div>
+        <div className="sidebar">
+          <Sidebar 
+            currentSection={this.props.currentSection}
+            changeSection={this.props.changeSection}
+          />
+        </div>
+      </Grid>
+    );
+  }
+}
 
-Page.propTypes = {};
+Page.propTypes = {
+  currentSection: PropTypes.string,
+  changeSection: PropTypes.func
+};
 
 export default Page;

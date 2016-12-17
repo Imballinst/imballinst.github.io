@@ -10,7 +10,7 @@
 /* Mixin */
 /* Global Margin */
 .margin-0 {
-  margin: 0 !important; }
+  margin: 0; }
 
 .margin-lf-0 {
   margin-left: 0px; }
@@ -169,7 +169,7 @@
   margin-right: -30px; }
 
 /* Global Padding */
-.padding-zero {
+.padding-0 {
   padding: 0; }
 
 .padding-lf-0 {
@@ -479,29 +479,39 @@ body {
   padding: 0;
   position: relative; }
   .page-container .sidebar {
-    background: red;
-    position: relative;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    position: fixed;
+    height: 100%;
     z-index: 2;
     text-align: right;
-    width: 200px; }
+    width: 150px;
+    top: 0;
+    right: 0; }
     .page-container .sidebar .sidebar-list {
       padding: 0;
       list-style: none;
       margin-bottom: 0; }
-      @media (max-width: 991px) {
-        .page-container .sidebar .sidebar-list {
-          padding-right: 8px; } }
-      @media (min-width: 992px) {
-        .page-container .sidebar .sidebar-list {
-          padding-right: 13px; } }
+      .page-container .sidebar .sidebar-list a {
+        outline: 0;
+        text-decoration: none; }
+      .page-container .sidebar .sidebar-list li {
+        margin-bottom: 10px;
+        cursor: pointer;
+        color: #000; }
+        .page-container .sidebar .sidebar-list li.active {
+          color: #FFF; }
+        .page-container .sidebar .sidebar-list li .fa {
+          margin-left: 5px; }
   .page-container .page-content {
     position: relative;
     z-index: 1; }
     .page-container .page-content .contact-section,
     .page-container .page-content .biography-section,
     .page-container .page-content .experience-section,
-    .page-container .page-content .photoframe-section,
+    .page-container .page-content .intro-section,
     .page-container .page-content .portfolio-section,
     .page-container .page-content .trackrecord-section {
       height: 500px;
-      background: yellow; }
+      background: yellow;
+      padding: 10px 160px; }

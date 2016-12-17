@@ -10,24 +10,38 @@ body {
   position: relative;
 
   .sidebar {
-    background: red;
-    position: relative;
+    background: rgba(0,0,0,0.4);
+    padding: 10px;
+    position: fixed;
+    height: 100%;
     z-index: 2;
     text-align: right;
-    width: 200px;
-    // margin-left: calc(100% - 200px);
+    width: 150px;
+    top: 0;
+    right: 0;
 
     .sidebar-list {
       padding: 0;
       list-style: none;
       margin-bottom: 0;
 
-      @media (max-width: $screen-sm-max) {
-        padding-right: 8px;
+      a {
+        outline: 0;
+        text-decoration: none;
       }
 
-      @media (min-width: $screen-md-min) {
-        padding-right: 13px;
+      li {
+        margin-bottom: 10px;
+        cursor: pointer;
+        color: #000;
+
+        &.active {
+          color: #FFF;
+        }
+
+        .fa {
+          margin-left: 5px;
+        }
       }
     }
   }
@@ -39,11 +53,12 @@ body {
     .contact-section, 
     .biography-section,
     .experience-section,
-    .photoframe-section,
+    .intro-section,
     .portfolio-section,
     .trackrecord-section {
       height: 500px;
       background: yellow;
+      padding: 10px 160px;
     }
 
     .biography-section {
@@ -58,7 +73,7 @@ body {
 
     }
 
-    .photoframe-section {
+    .intro-section {
 
     }
 

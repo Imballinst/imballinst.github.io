@@ -30,7 +30,7 @@ const basePaths = {
 
 const paths = {
   src: {
-    scss: basePaths.dev + 'scss/*.scss',
+    scss: basePaths.dev + 'scss/**/*.scss',
     css: basePaths.dev + 'css/**/*.css',
     js: {
       root: basePaths.dev + 'js/*.js',
@@ -46,6 +46,7 @@ const paths = {
     html: rootPaths.dev + '*.html'
   },
   dev: {
+    scss: basePaths.dev + 'scss/',
     css: basePaths.dev + 'css/',
     js: {
       root: basePaths.dev + 'js/',
@@ -114,7 +115,7 @@ gulp.task('concatPlugins', function() {
 
 // Precompile and Watch
 gulp.task('sass', function(){
-  return gulp.src(paths.src.scss)
+  return gulp.src(paths.dev.scss + '*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(paths.dev.css))
     .pipe(browserSync.stream({once: true}));
