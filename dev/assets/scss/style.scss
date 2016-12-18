@@ -1,22 +1,29 @@
 @import 'base/base';
 
+// --------------------------------
+// | Section  | Description       |
+// --------------------------------
+// | S-001    | Generic theme     |
+// | S-002    | >=768px           |
+// | S-003    | <=767px           |
+// --------------------------------
+
 body {
-  position: relative;
+  font-family: 'Lora', serif;
+  background: #000;
 }
 
+// S-001: Generic theme
 .page-container {
-  background: green;
   padding: 0;
   position: relative;
 
   .sidebar {
-    background: rgba(0,0,0,0.4);
     padding: 10px;
     position: fixed;
     height: 100%;
     z-index: 2;
     text-align: right;
-    width: 150px;
     top: 0;
     right: 0;
 
@@ -33,10 +40,14 @@ body {
       li {
         margin-bottom: 10px;
         cursor: pointer;
-        color: #000;
+        color: $light_blue;
 
         &.active {
           color: #FFF;
+        }
+
+        .sidebar-text {
+          display: inline;
         }
 
         .fa {
@@ -52,37 +63,332 @@ body {
 
     .contact-section, 
     .biography-section,
-    .experience-section,
-    .intro-section,
+    .tech-section,
     .portfolio-section,
     .trackrecord-section {
-      height: 500px;
-      background: yellow;
-      padding: 10px 160px;
+      color: $light_aquamarine;
+
+      border-bottom: 2px solid $aquamarine;
+
+      .section-title {
+        font-weight: bold;
+
+        margin-top: 0;
+        margin-bottom: 30px;
+      }
+    }
+
+    .tech-section, .portfolio-section {
+      background: $midnight_blue;
+    }
+
+    .trackrecord-section, .contact-section {
+      background: $dark_slate_blue;
     }
 
     .biography-section {
-      
-    }
+      background: url('../img/earth.jpg');
+      background-size: cover;
 
-    .contact-section {
+      .biography-name, 
+      .biography-position, 
+      .biography-logo, 
+      .biography-text {
+        text-align: center;
+      }
 
-    }
+      .biography-name {
+        font-weight: bold;
+      }
 
-    .experience-section {
+      .biography-position {
+        margin-bottom: 30px;
+      }
 
-    }
+      .biography-logo {
+        font-size: 50px;
+      }
 
-    .intro-section {
-
-    }
-
-    .portfolio-section {
-
+      .biography-text {
+        margin-top: 30px;
+        text-align: left;
+      }
     }
 
     .trackrecord-section {
+      background: url('../img/trackrecord.jpg');
+      background-size: cover;
+    }
 
+    .portfolio-section {
+      .portfolio-element {
+        margin: 10px 0;
+        text-align: center;
+
+        .portfolio-img {
+          width: 200px;
+          height: 200px;
+          border: 2px solid white;
+
+          @include pp-border-radius(100px);
+
+          &:hover {
+            border-style: inset;
+            cursor: pointer;
+
+            @include mixin-box-shadow(10px, 10px, 5px, #000);
+          }
+        }
+      }
+    }
+
+    .contact-section {
+      background: url('../img/shakuras.jpg');
+      border-bottom: 0;
+
+      .list-inline {
+        list-style: none;
+        text-align: center;
+
+        li {
+          display: inline;
+
+          a {
+            color: $light_aquamarine;
+          }
+        }
+      }
+    }
+  }
+}
+
+// S-002: >768px
+@media (min-width: $screen-sm-min) {
+  .page-container {
+    width: calc(100% - 330px);
+
+    .sidebar {
+      width: 150px;
+
+      .sidebar-list {
+        a {
+
+        }
+
+        li {
+          &.active {
+            
+          }
+
+          .sidebar-text {
+            
+          }
+
+          .fa {
+            
+          }
+        }
+      }
+    }
+
+    .page-content {
+      .contact-section, 
+      .biography-section,
+      .tech-section,
+      .portfolio-section,
+      .trackrecord-section {
+        padding: 50px 50px;
+
+        .section-text, .section-list {
+          font-size: $font-size-screen-sm-min;
+        }
+      }
+
+      .biography-section {
+        padding-top: 75px;
+
+        .biography-name, 
+        .biography-position, 
+        .biography-logo, 
+        .biography-text {
+          
+        }
+
+        .biography-position {
+
+        }
+
+        .biography-name {
+          
+        }
+
+        .biography-logo {
+          
+        }
+      }
+
+      .contact-section {
+        .list-inline {
+          li {
+            font-size: $font-size-screen-sm-min;
+          }
+        }
+      }
+
+      .tech-section {
+        
+      }
+
+      .portfolio-section {
+        
+      }
+
+      .trackrecord-section {
+        
+      }
+    }
+  }
+}
+
+// S-002: >768px
+@media (max-width: $screen-xs-max) {
+  .page-container {
+    width: calc(100% - 130px);
+
+    .sidebar {
+      width: 50px;
+
+      .sidebar-list {
+        a {
+
+        }
+
+        li {
+          &.active {
+            
+          }
+
+          .sidebar-text {
+            display: none;
+          }
+
+          .fa {
+            
+          }
+        }
+      }
+    }
+
+    .page-content {
+      .contact-section, 
+      .biography-section,
+      .tech-section,
+      .portfolio-section,
+      .trackrecord-section {
+        padding: 50px 10px;
+      }
+
+      .biography-section {
+        padding-top: 10px;
+
+        .biography-name, 
+        .biography-position, 
+        .biography-logo, 
+        .biography-text {
+          
+        }
+
+        .biography-name {
+          
+        }
+
+        .biography-logo {
+          
+        }
+
+        .biography-text {
+          
+        }
+      }
+
+      .contact-section {
+        .list-inline {
+          li {
+            font-size: $font-size-screen-sm-min;
+          }
+        }
+      }
+
+      .tech-section {
+
+      }
+
+      .portfolio-section {
+
+      }
+
+      .trackrecord-section {
+
+      }
+    }
+  }
+}
+
+// Modal
+
+.portfolio-modal {
+  .modal-dialog {
+    .modal-content {
+      background: $midnight_blue;
+      border: 2px solid $aquamarine;
+      color: $light_aquamarine;
+      font-size: $font-size-screen-sm-min;
+
+      .portfolio-modal-header {
+        border-bottom: 0;
+
+        .close {
+          font-size: 40px;
+          opacity: 1;
+
+          span {
+            color: $light_aquamarine;
+          }
+        }
+      }
+
+      .portfolio-modal-body {
+        .portfolio-title {
+          text-align: center;
+
+          .portfolio-title-img {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #000;
+
+            @include pp-border-radius(100px);
+          }
+
+          .portfolio-title-text {
+            font-weight: bold;
+            margin-bottom: 30px;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: $light_blue;
+        }
+
+        .portfolio-hr {
+          border-top: 1px solid $light_aquamarine;
+        }
+      }
+
+      .portfolio-modal-footer {
+        border-top: 0;
+        text-align: center;
+      }
     }
   }
 }

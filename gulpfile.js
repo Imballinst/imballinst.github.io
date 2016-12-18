@@ -118,7 +118,7 @@ gulp.task('sass', function(){
   return gulp.src(paths.dev.scss + '*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(paths.dev.css))
-    .pipe(browserSync.stream({once: true}));
+    .pipe(browserSync.stream());
 });
 
 gulp.task('browserSync', function() {

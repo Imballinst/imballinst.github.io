@@ -6,13 +6,6 @@ const Sidebar = (props) => (
   <ul className="sidebar-list">
     <SidebarElement
       changeSection={props.changeSection}
-      text="Intro"
-      section="intro-section"
-      faIcon="user-circle"
-      active={props.currentSection === "intro-section" ? "active" : ""}
-    />
-    <SidebarElement
-      changeSection={props.changeSection}
       text="Biography"
       section="biography-section"
       faIcon="align-justify"
@@ -20,10 +13,10 @@ const Sidebar = (props) => (
     />
     <SidebarElement
       changeSection={props.changeSection}
-      text="Experience"
-      section="experience-section"
+      text="Technical Skills"
+      section="tech-section"
       faIcon="star"
-      active={props.currentSection === "experience-section" ? "active" : ""}
+      active={props.currentSection === "tech-section" ? "active" : ""}
     />
     <SidebarElement
       changeSection={props.changeSection}

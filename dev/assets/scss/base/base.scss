@@ -7,6 +7,11 @@ $screen-sm-max: ($screen-md-min - 1);
 $screen-lg-min: 1200px;
 $screen-md-max: ($screen-lg-min - 1);
 
+// Typography
+
+$font-size-screen-sm-min: 18px;
+$font-size-screen-xs-max: 14px;
+
 /* Height controller */
 
 .half-height { min-height: 50%; }
@@ -17,21 +22,9 @@ $screen-md-max: ($screen-lg-min - 1);
 $light_blue: #22D9E9;
 $aquamarine: #1B96A0;
 $light_aquamarine: #DBFFF7;
-$antique_grey: #576361;
-$sea_green: #1CA58B;
-$forest_green: #05604B;
-$soft_green: #26BA9A;
-$light_green: #A7FAE8;
-$white_green: #DFFEF7;
-$sidebar_heading: #289B81;
-$light_grey: #DBDBDB;
 $platinum: #454545;
-$soft_grey: #9BAD9D;
-$dark_grey: #979797;
-$grey: #D1D1D1;
-$orange: #EE5F07;
-$light_orange: #F4AF01;
-$blue: #588BD4;
+$midnight_blue: #120d49;
+$dark_slate_blue: #483D8B;
 
 /* Mixin */
 
@@ -58,15 +51,21 @@ $blue: #588BD4;
 }
 
 @mixin pp-border-radius($radius) {
-  border-radius: $radius;
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
+  border-radius: $radius;
 }
 
-@mixin pp-border-radius-assym($r1,$r2,$r3,$r4) {
-  border-radius: $r1 $r2 $r3 $r4;
+@mixin pp-border-radius-assym($r1, $r2, $r3, $r4) {
   -webkit-border-radius: $r1 $r2 $r3 $r4;
   -moz-border-radius: $r1 $r2 $r3 $r4;
+  border-radius: $r1 $r2 $r3 $r4;
+}
+
+@mixin mixin-box-shadow($verticalHeight, $horizontalHeight, $blur, $color) {
+  -webkit-box-shadow: $verticalHeight $horizontalHeight $blur $color;
+  -moz-box-shadow: $verticalHeight $horizontalHeight $blur $color;
+  box-shadow: $verticalHeight $horizontalHeight $blur $color;
 }
 
 /* Global Margin */

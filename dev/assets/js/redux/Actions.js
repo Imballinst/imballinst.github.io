@@ -7,4 +7,12 @@ function changeSection(section) {
   };
 }
 
-export { changeSection };
+function togglePortfolio(toggle, content) {
+  return {
+    type: ActionTypes.TOGGLE_PORTFOLIO,
+    toggle: toggle,
+    content: content
+  };
+}
+
+export { changeSection, togglePortfolio };

@@ -472,20 +472,18 @@
     margin-top: 10px; } }
 
 body {
-  position: relative; }
+  font-family: 'Lora', serif;
+  background: #000; }
 
 .page-container {
-  background: green;
   padding: 0;
   position: relative; }
   .page-container .sidebar {
-    background: rgba(0, 0, 0, 0.4);
     padding: 10px;
     position: fixed;
     height: 100%;
     z-index: 2;
     text-align: right;
-    width: 150px;
     top: 0;
     right: 0; }
     .page-container .sidebar .sidebar-list {
@@ -498,9 +496,11 @@ body {
       .page-container .sidebar .sidebar-list li {
         margin-bottom: 10px;
         cursor: pointer;
-        color: #000; }
+        color: #22D9E9; }
         .page-container .sidebar .sidebar-list li.active {
           color: #FFF; }
+        .page-container .sidebar .sidebar-list li .sidebar-text {
+          display: inline; }
         .page-container .sidebar .sidebar-list li .fa {
           margin-left: 5px; }
   .page-container .page-content {
@@ -508,10 +508,143 @@ body {
     z-index: 1; }
     .page-container .page-content .contact-section,
     .page-container .page-content .biography-section,
-    .page-container .page-content .experience-section,
-    .page-container .page-content .intro-section,
+    .page-container .page-content .tech-section,
     .page-container .page-content .portfolio-section,
     .page-container .page-content .trackrecord-section {
-      height: 500px;
-      background: yellow;
-      padding: 10px 160px; }
+      color: #DBFFF7;
+      border-bottom: 2px solid #1B96A0; }
+      .page-container .page-content .contact-section .section-title,
+      .page-container .page-content .biography-section .section-title,
+      .page-container .page-content .tech-section .section-title,
+      .page-container .page-content .portfolio-section .section-title,
+      .page-container .page-content .trackrecord-section .section-title {
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 30px; }
+    .page-container .page-content .tech-section, .page-container .page-content .portfolio-section {
+      background: #120d49; }
+    .page-container .page-content .trackrecord-section, .page-container .page-content .contact-section {
+      background: #483D8B; }
+    .page-container .page-content .biography-section {
+      background: url("../img/earth.jpg");
+      background-size: cover; }
+      .page-container .page-content .biography-section .biography-name,
+      .page-container .page-content .biography-section .biography-position,
+      .page-container .page-content .biography-section .biography-logo,
+      .page-container .page-content .biography-section .biography-text {
+        text-align: center; }
+      .page-container .page-content .biography-section .biography-name {
+        font-weight: bold; }
+      .page-container .page-content .biography-section .biography-position {
+        margin-bottom: 30px; }
+      .page-container .page-content .biography-section .biography-logo {
+        font-size: 50px; }
+      .page-container .page-content .biography-section .biography-text {
+        margin-top: 30px;
+        text-align: left; }
+    .page-container .page-content .trackrecord-section {
+      background: url("../img/trackrecord.jpg");
+      background-size: cover; }
+    .page-container .page-content .portfolio-section .portfolio-element {
+      margin: 10px 0;
+      text-align: center; }
+      .page-container .page-content .portfolio-section .portfolio-element .portfolio-img {
+        width: 200px;
+        height: 200px;
+        border: 2px solid white;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 100px; }
+        .page-container .page-content .portfolio-section .portfolio-element .portfolio-img:hover {
+          border-style: inset;
+          cursor: pointer;
+          -webkit-box-shadow: 10px 10px 5px #000;
+          -moz-box-shadow: 10px 10px 5px #000;
+          box-shadow: 10px 10px 5px #000; }
+    .page-container .page-content .contact-section {
+      background: url("../img/shakuras.jpg");
+      border-bottom: 0; }
+      .page-container .page-content .contact-section .list-inline {
+        list-style: none;
+        text-align: center; }
+        .page-container .page-content .contact-section .list-inline li {
+          display: inline; }
+          .page-container .page-content .contact-section .list-inline li a {
+            color: #DBFFF7; }
+
+@media (min-width: 768px) {
+  .page-container {
+    width: calc(100% - 330px); }
+    .page-container .sidebar {
+      width: 150px; }
+    .page-container .page-content .contact-section,
+    .page-container .page-content .biography-section,
+    .page-container .page-content .tech-section,
+    .page-container .page-content .portfolio-section,
+    .page-container .page-content .trackrecord-section {
+      padding: 50px 50px; }
+      .page-container .page-content .contact-section .section-text, .page-container .page-content .contact-section .section-list,
+      .page-container .page-content .biography-section .section-text,
+      .page-container .page-content .biography-section .section-list,
+      .page-container .page-content .tech-section .section-text,
+      .page-container .page-content .tech-section .section-list,
+      .page-container .page-content .portfolio-section .section-text,
+      .page-container .page-content .portfolio-section .section-list,
+      .page-container .page-content .trackrecord-section .section-text,
+      .page-container .page-content .trackrecord-section .section-list {
+        font-size: 18px; }
+    .page-container .page-content .biography-section {
+      padding-top: 75px; }
+    .page-container .page-content .contact-section .list-inline li {
+      font-size: 18px; } }
+
+@media (max-width: 767px) {
+  .page-container {
+    width: calc(100% - 130px); }
+    .page-container .sidebar {
+      width: 50px; }
+      .page-container .sidebar .sidebar-list li .sidebar-text {
+        display: none; }
+    .page-container .page-content .contact-section,
+    .page-container .page-content .biography-section,
+    .page-container .page-content .tech-section,
+    .page-container .page-content .portfolio-section,
+    .page-container .page-content .trackrecord-section {
+      padding: 50px 10px; }
+    .page-container .page-content .biography-section {
+      padding-top: 10px; }
+    .page-container .page-content .contact-section .list-inline li {
+      font-size: 18px; } }
+
+.portfolio-modal .modal-dialog .modal-content {
+  background: #120d49;
+  border: 2px solid #1B96A0;
+  color: #DBFFF7;
+  font-size: 18px; }
+  .portfolio-modal .modal-dialog .modal-content .portfolio-modal-header {
+    border-bottom: 0; }
+    .portfolio-modal .modal-dialog .modal-content .portfolio-modal-header .close {
+      font-size: 40px;
+      opacity: 1; }
+      .portfolio-modal .modal-dialog .modal-content .portfolio-modal-header .close span {
+        color: #DBFFF7; }
+  .portfolio-modal .modal-dialog .modal-content .portfolio-modal-body .portfolio-title {
+    text-align: center; }
+    .portfolio-modal .modal-dialog .modal-content .portfolio-modal-body .portfolio-title .portfolio-title-img {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #000;
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+      border-radius: 100px; }
+    .portfolio-modal .modal-dialog .modal-content .portfolio-modal-body .portfolio-title .portfolio-title-text {
+      font-weight: bold;
+      margin-bottom: 30px; }
+  .portfolio-modal .modal-dialog .modal-content .portfolio-modal-body a {
+    text-decoration: none;
+    color: #22D9E9; }
+  .portfolio-modal .modal-dialog .modal-content .portfolio-modal-body .portfolio-hr {
+    border-top: 1px solid #DBFFF7; }
+  .portfolio-modal .modal-dialog .modal-content .portfolio-modal-footer {
+    border-top: 0;
+    text-align: center; }

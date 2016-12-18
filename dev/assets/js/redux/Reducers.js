@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import * as ActionTypes from '../constants/ActionTypes';
 
 const initialSectionState = {
-  currentSection: 'intro-section'
+  currentSection: 'biography-section'
 };
 
 function changeSectionState(state = initialSectionState, action) {
@@ -17,10 +17,37 @@ function changeSectionState(state = initialSectionState, action) {
       return state;
     }
   }
-};
+}
+
+const initialPortfolioModalState = {
+  portfolio: {
+    show: false,
+    content: 'go2015'
+  }
+}
+
+function changePortfolioModalState(state = initialPortfolioModalState, action) {
+  switch (action.type) {
+    case (ActionTypes.TOGGLE_PORTFOLIO): {
+      const oldPortfolioState = state.portfolio;
+      const newPortfolioState = Object.assign({}, oldPortfolioState, {
+        show: action.toggle,
+        content: action.content
+      });
+
+      return Object.assign({}, state, {
+        portfolio: newPortfolioState
+      }); 
+    }
+    default: {
+      return state;
+    }
+  }
+}
 
 const rootReducer = combineReducers({
-  changeSectionState
+  changeSectionState,
+  changePortfolioModalState
 });
 
 export default rootReducer;

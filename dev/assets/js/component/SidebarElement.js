@@ -11,7 +11,7 @@ class SidebarElement extends React.Component {
     return (
       <a href={'#' + this.props.section}>
         <li className={this.props.active} onClick={this.onSideBarClick(this.props.section)}>
-          {this.props.text}
+          <span className="sidebar-text">{this.props.text}</span>
           <FontAwesome icon={this.props.faIcon} additionalClass="fa-fw" />
         </li>
       </a>
