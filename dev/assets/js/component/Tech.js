@@ -19,16 +19,16 @@ const Tech = (props) => (
       This is the list of web technologies I have been using since I began learning about front-end web development, sorted by my comprehension and average daily interaction on each technology.
     </p>
     <ol className="section-list">
-        <li><b>React</b> with <b>Redux</b>: 8.5/10</li>
-        <li><b>HTML5</b> and <b>CSS3</b>: 8.5/10</li>
-        <li>Module bundler (<b>browserify</b>): 8.0/10</li>
-        <li>Task runner (<b>gulp</b>): 8.0/10</li>
-        <li><b>JQuery</b>: 8.0/10</li>
-        <li><b>Javascript</b> (including <b>ES6</b>): 7.5/10</li>
-        <li>CSS and JS linter (<b>ESlint</b>): 7.5/10</li>
-        <li>Content Management System (such as <b>Moodle</b> and <b>Wordpress</b>): 7.0/10</li>
-        <li><b>NodeJS</b> (including <b>ExpressJS</b> and <b>EJS</b>): 6.0/10</li>
-        <li>CSS coding pattern (<b>SMACSS</b>, <b>BEM</b>, etc.): 4.0/10</li>
+        <li><b>React</b> with <b>Redux</b>: 8.0/10</li>
+        <li><b>HTML5</b> and <b>CSS3</b>: 8.0/10</li>
+        <li>Module bundler (<b>browserify</b>): 7.5/10</li>
+        <li>Task runner (<b>gulp</b>): 7.5/10</li>
+        <li><b>JQuery</b>: 7.5/10</li>
+        <li><b>Javascript</b> (including <b>ES6</b>): 7/10</li>
+        <li>JS linter (<b>ESlint</b>): 7/10</li>
+        <li>Content Management System (such as <b>Moodle</b> and <b>Wordpress</b>): 6.5/10</li>
+        <li><b>NodeJS</b> (including <b>ExpressJS</b> and <b>EJS</b>): 5.5/10</li>
+        <li>CSS coding pattern (<b>SMACSS</b>, <b>BEM</b>, etc.): 5.0/10</li>
       </ol>
   </div>
 );
