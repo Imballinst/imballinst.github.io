@@ -17,6 +17,8 @@ const source = require('vinyl-source-stream');
 const uglify = require('gulp-uglify');
 const watchify = require('watchify');
 
+require('dotenv').config();
+
 // Variables
 const rootPaths = {
   dev: 'dev/',
@@ -190,6 +192,8 @@ gulp.task('cache:clear', function (callback) {
 
 // Build Dist and Run Development
 gulp.task('build', function(callback) {
+  process.env.NODE_ENV = 'production';
+
   runSequence('clean:dist', 'sass',
               'reactIndex', 'concatPlugins',
     ['styles', 'scripts', 'images', 'fonts'],
@@ -199,5 +203,7 @@ gulp.task('build', function(callback) {
 });
 
 gulp.task('default', ['sass', 'concatPlugins', 'watch'], function (callback) {
+  process.env.NODE_ENV = 'local';
+
   runSequence('browserSync', callback);
 });
